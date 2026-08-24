@@ -18,7 +18,6 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 body { background: var(--creme); font-family: 'Nunito', sans-serif; color: var(--brun); overflow-x: hidden; }
-
 /* ── HEADER ── */
 header {
   background: linear-gradient(160deg, #3B2408 0%, #5C3D1A 50%, #7A5230 100%);
@@ -91,7 +90,7 @@ header::before {
   flex-wrap: wrap;
 }
 .mascot-img {
-  width: clamp(160px, 25vw, 300px);
+  width: clamp(260px, 40vw, 480px);
   border-radius: 20px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.4);
   animation: float 4s ease-in-out infinite;
@@ -111,7 +110,6 @@ header::before {
 }
 .header-address a { color: var(--orange); text-decoration: none; font-weight: 700; }
 .header-address a:hover { text-decoration: underline; }
-
 /* ── NAV STRIP ── */
 nav {
   background: var(--vert);
@@ -134,7 +132,6 @@ nav a {
   letter-spacing: 0.5px;
 }
 nav a:hover { background: rgba(255,255,255,0.2); }
-
 /* ── SECTIONS GENERAL ── */
 .section { padding: 70px 20px; }
 .section-alt { background: var(--creme-fonce); }
@@ -165,7 +162,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
   margin: 0 auto 40px;
   line-height: 1.7;
 }
-
 /* ── DATE BANNER ── */
 .date-banner {
   background: var(--brun);
@@ -177,7 +173,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
   letter-spacing: 2px;
 }
 .date-banner span { color: var(--orange); }
-
 /* ── CARDS ── */
 .cards {
   display: grid;
@@ -204,7 +199,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
 .card p { font-size: 0.95rem; line-height: 1.6; color: #5a4b38; }
 .card.violet { border-top-color: var(--violet); }
 .card.orange { border-top-color: var(--orange); }
-
 /* ── PRODUITS ── */
 .produits-grid {
   display: flex;
@@ -228,7 +222,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
 .produit-tag.v:hover { background: var(--violet); color: white; }
 .produit-tag.o { border-color: var(--orange); color: var(--orange); }
 .produit-tag.o:hover { background: var(--orange); color: white; }
-
 /* ── GONFLABLE SECTION ── */
 .gonflable-wrap {
   display: grid;
@@ -263,7 +256,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
   font-size: 0.85rem;
   margin: 4px 4px 4px 0;
 }
-
 /* ── MENU ── */
 .menu-grid {
   display: grid;
@@ -321,7 +313,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
   border-top: 1px solid var(--creme-fonce);
 }
 .menu-price span { color: var(--vert); font-family: 'Fredoka One', cursive; font-size: 1.3rem; }
-
 .resa-cta {
   text-align: center;
   margin-top: 36px;
@@ -343,7 +334,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
 .btn-resa:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(74,124,63,0.5); }
 .btn-resa.orange { background: var(--orange); box-shadow: 0 6px 24px rgba(224,123,57,0.4); }
 .btn-resa.orange:hover { box-shadow: 0 10px 30px rgba(224,123,57,0.5); }
-
 /* ── HERO SLOGAN ── */
 .hero-slogan {
   background: linear-gradient(135deg, var(--violet), #8B5CB0);
@@ -364,7 +354,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
   margin: 0 auto;
   line-height: 1.7;
 }
-
 /* ── INFOS PRATIQUES ── */
 .infos-grid {
   display: grid;
@@ -388,7 +377,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
 .info-box p { font-size: 0.9rem; color: #5a4b38; line-height: 1.6; }
 .info-box a { color: var(--vert); font-weight: 700; text-decoration: none; }
 .info-box a:hover { text-decoration: underline; }
-
 /* ── FOOTER ── */
 footer {
   background: var(--brun);
@@ -406,7 +394,6 @@ footer .footer-title {
   color: var(--orange);
   margin-bottom: 12px;
 }
-
 /* ── POPUP RESERVATION ── */
 .overlay {
   display: none;
@@ -479,17 +466,67 @@ footer .footer-title {
   text-align: center;
   text-decoration: none;
   display: block;
+  position: relative;
+  width: 100%;
 }
-.day-btn:hover { background: var(--vert); color: white; }
+.day-btn:hover { background: rgba(74,124,63,0.08); }
 .day-btn.orange { border-color: var(--orange); color: var(--orange); }
-.day-btn.orange:hover { background: var(--orange); color: white; }
+.day-btn.orange:hover { background: rgba(224,123,57,0.08); }
+.day-btn.selected {
+  background: var(--vert);
+  color: white;
+  box-shadow: 0 4px 14px rgba(74,124,63,0.35);
+}
+.day-btn.orange.selected {
+  background: var(--orange);
+  color: white;
+  box-shadow: 0 4px 14px rgba(224,123,57,0.35);
+}
+.day-btn.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.popup-note-select {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin: -10px 0 20px;
+}
+.btn-continue {
+  display: block;
+  width: 100%;
+  background: var(--orange);
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  padding: 14px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(224,123,57,0.35);
+}
+.btn-continue:hover { transform: translateY(-2px); }
+.btn-continue.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
 .popup-note {
   font-size: 0.85rem;
   color: #888;
   text-align: center;
   font-style: italic;
 }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 700px) {
   .gonflable-wrap { grid-template-columns: 1fr; }
@@ -498,7 +535,6 @@ footer .footer-title {
   .mascot-img { width: 90vw; max-width: 340px; }
   .popup-days { grid-template-columns: 1fr; }
 }
-
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity: 0;
@@ -509,7 +545,6 @@ footer .footer-title {
 </style>
 </head>
 <body>
-
 <!-- RESERVATION POPUP -->
 <div class="overlay" id="resa-overlay">
   <div class="popup">
@@ -519,28 +554,29 @@ footer .footer-title {
     </div>
     <div class="popup-body">
       <p>Repas du terroir servis le <strong>samedi 3 octobre</strong> et le <strong>dimanche 4 octobre</strong> à partir de midi. Places limitées — réservation conseillée.</p>
-      <p style="font-size:0.9rem; color:#777; margin-bottom:16px;">Sélectionnez le jour souhaité pour réserver en ligne :</p>
+      <p style="font-size:0.9rem; color:#777; margin-bottom:16px;">Sélectionnez le ou les jours souhaités — vous pouvez réserver un seul repas ou les deux :</p>
       <div class="popup-days">
-        <a href="https://www.helloasso.com" target="_blank" class="day-btn">
+        <button type="button" class="day-btn" data-day="samedi" onclick="toggleDay(this)">
           📅 Samedi 3 Octobre<br>
           <span style="font-size:0.8rem; font-family:Nunito; font-weight:600;">Repas du midi</span>
-        </a>
-        <a href="https://www.helloasso.com" target="_blank" class="day-btn orange">
+        </button>
+        <button type="button" class="day-btn orange" data-day="dimanche" onclick="toggleDay(this)">
           📅 Dimanche 4 Octobre<br>
           <span style="font-size:0.8rem; font-family:Nunito; font-weight:600;">Repas du midi</span>
-        </a>
+        </button>
       </div>
+      <p class="popup-note-select" id="resa-summary">Aucun jour sélectionné pour l'instant</p>
+      <a href="https://www.helloasso.com" target="_blank" id="resa-continue" class="btn-continue disabled" onclick="return handleContinue(event)">Continuer vers la réservation</a>
       <div style="background:white; border-radius:14px; padding:16px; margin-bottom:16px; border-left: 4px solid var(--vert);">
         <strong style="font-family:'Fredoka One',cursive;">Tarifs :</strong>
         <div style="margin-top:8px; font-size:0.95rem; line-height:2;">
-          👤 Adulte : <strong>20 €</strong> &nbsp;|&nbsp; 🧒 Enfant : <strong>12 €</strong>
+          👤 Adulte : <strong>20 €</strong> &nbsp;|&nbsp; 🧒 Enfant : <strong>12 €</strong> <span style="color:#888; font-style:italic;">(par repas)</span>
         </div>
       </div>
       <p class="popup-note">Questions ? 📞 06 13 14 46 93</p>
     </div>
   </div>
 </div>
-
 <!-- HEADER -->
 <header>
   <div class="header-dates">🗓️ Samedi 3 & Dimanche 4 Octobre 2026</div>
@@ -557,7 +593,6 @@ footer .footer-title {
     <a href="https://www.facebook.com/p/SARL-La-Sans-Fonnaise-100057504105927/" target="_blank">📘 Suivez-nous sur Facebook</a>
   </div>
 </header>
-
 <!-- NAV -->
 <nav>
   <a href="#programme">Programme</a>
@@ -567,12 +602,10 @@ footer .footer-title {
   <a href="#enfants">Enfants</a>
   <a href="#infos">Infos pratiques</a>
 </nav>
-
 <!-- DATE BANNER -->
 <div class="date-banner">
   🌾 Rendez-vous <span>Samedi 3 & Dimanche 4 Octobre 2026</span> — Entrée libre 🌾
 </div>
-
 <!-- PROGRAMME -->
 <section class="section" id="programme">
   <div class="container">
@@ -604,13 +637,11 @@ footer .footer-title {
     </div>
   </div>
 </section>
-
 <!-- HERO SLOGAN -->
 <div class="hero-slogan">
   <h2>🌱 Nos producteurs ont du goût !</h2>
   <p>Éleveurs, agriculteurs, artisans — tous passionnés, tous locaux. Venez les rencontrer, découvrir leurs savoir-faire et repartir avec le meilleur de la Bourgogne.</p>
 </div>
-
 <!-- ANIMATIONS -->
 <section class="section section-alt" id="animations">
   <div class="container">
@@ -651,7 +682,6 @@ footer .footer-title {
     </div>
   </div>
 </section>
-
 <!-- PRODUCTEURS -->
 <section class="section" id="producteurs">
   <div class="container">
@@ -677,7 +707,6 @@ footer .footer-title {
     </div>
   </div>
 </section>
-
 <!-- GONFLABLE / ENFANTS -->
 <section class="section section-alt" id="enfants">
   <div class="container">
@@ -692,7 +721,7 @@ footer .footer-title {
         <p>
           <span class="badge">🎈 Structure gonflable</span>
           <span class="badge">🎒 Passeport du Petit Producteur</span>
-          <span class="badge">🌱 Atelier Patate à planter</span>
+          <span class="badge">🌱 Atelier oignon à planter</span>
           <span class="badge">📸 Photo Spot Super Patate</span>
           <span class="badge">🚜 Visite guidée de la ferme</span>
           <span class="badge">🪵 Jeux en bois</span>
@@ -702,7 +731,6 @@ footer .footer-title {
     </div>
   </div>
 </section>
-
 <!-- REPAS -->
 <section class="section" id="repas">
   <div class="container">
@@ -725,7 +753,8 @@ footer .footer-title {
             <div class="course-label">Plat</div>
             <div class="course-detail">
               <strong>Jambon braisé à la moutarde de Bourgogne</strong><br>
-              Gratin dauphinois maison<br>            
+              Écrasé de pommes de terre fermier<br>
+              <span class="course-alt">— ou —<br>Saucisse fermière & gratin dauphinois maison</span>
             </div>
           </div>
           <div class="menu-course">
@@ -752,8 +781,9 @@ footer .footer-title {
           <div class="menu-course">
             <div class="course-label">Plat</div>
             <div class="course-detail">
-              <strong>Saucisse fermière </strong><br>
-              Écrasé de pommes de terre fermier<br>        
+              <strong>Jambon braisé à la moutarde de Bourgogne</strong><br>
+              Écrasé de pommes de terre fermier<br>
+              <span class="course-alt">— ou —<br>Saucisse fermière & gratin dauphinois maison</span>
             </div>
           </div>
           <div class="menu-course">
@@ -762,7 +792,7 @@ footer .footer-title {
           </div>
           <div class="menu-course">
             <div class="course-label">Dessert</div>
-            <div class="course-detail">Tiramisu framboise</div>
+            <div class="course-detail">Tarte aux pommes artisanale</div>
           </div>
         </div>
         <div class="menu-price">Adulte <span>20 €</span> &nbsp;|&nbsp; Enfant <span>12 €</span></div>
@@ -774,7 +804,6 @@ footer .footer-title {
     </div>
   </div>
 </section>
-
 <!-- INFOS PRATIQUES -->
 <section class="section section-alt" id="infos">
   <div class="container">
@@ -808,7 +837,6 @@ footer .footer-title {
     </div>
   </div>
 </section>
-
 <!-- FOOTER CTA -->
 <div style="background:var(--vert); text-align:center; padding:40px 20px;">
   <p style="font-family:'Fredoka One',cursive; font-size:1.8rem; color:white; margin-bottom:16px;">Prêt à vivre la Patate en Folie ? 🥔</p>
@@ -816,7 +844,6 @@ footer .footer-title {
   &nbsp;
   <a href="https://www.facebook.com/p/SARL-La-Sans-Fonnaise-100057504105927/" target="_blank" class="btn-resa" style="background:var(--violet); box-shadow: 0 6px 24px rgba(107,63,140,0.4); margin-top:10px;">📘 Suivre sur Facebook</a>
 </div>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-title">PATATE EN FOLIE</div>
@@ -824,7 +851,6 @@ footer .footer-title {
   <p>📞 <a href="tel:0613144693">06 13 14 46 93</a> &nbsp;|&nbsp; <a href="https://www.facebook.com/p/SARL-La-Sans-Fonnaise-100057504105927/" target="_blank">Rejoignez-nous sur Facebook</a></p>
   <p style="margin-top:16px; opacity:0.6; font-size:0.8rem;">© 2026 SARL La Sans Fonnaise — Tous droits réservés</p>
 </footer>
-
 <script>
 // Popup
 function openPopup() {
@@ -841,6 +867,48 @@ document.getElementById('resa-overlay').addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closePopup();
 });
+
+// Réservation : sélection d'un ou des deux jours (samedi et/ou dimanche)
+var HELLOASSO_URL = 'https://www.helloasso.com'; // <-- à remplacer par le lien du formulaire HelloAsso
+var selectedDays = [];
+
+function toggleDay(btn) {
+  var day = btn.dataset.day;
+  var idx = selectedDays.indexOf(day);
+  if (idx > -1) {
+    selectedDays.splice(idx, 1);
+    btn.classList.remove('selected');
+  } else {
+    selectedDays.push(day);
+    btn.classList.add('selected');
+  }
+  updateResaSummary();
+}
+
+function updateResaSummary() {
+  var summary = document.getElementById('resa-summary');
+  var continueBtn = document.getElementById('resa-continue');
+  var labels = { samedi: 'Samedi 3 Octobre', dimanche: 'Dimanche 4 Octobre' };
+
+  if (selectedDays.length === 0) {
+    summary.textContent = "Aucun jour sélectionné pour l'instant";
+    continueBtn.classList.add('disabled');
+  } else {
+    var names = selectedDays.map(function (d) { return labels[d]; }).join(' + ');
+    summary.textContent = 'Repas sélectionné(s) : ' + names;
+    continueBtn.classList.remove('disabled');
+  }
+}
+
+function handleContinue(e) {
+  if (selectedDays.length === 0) {
+    e.preventDefault();
+    return false;
+  }
+  // La quantité/le nombre de repas par jour se règle ensuite sur le formulaire HelloAsso.
+  e.currentTarget.href = HELLOASSO_URL;
+  return true;
+}
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
