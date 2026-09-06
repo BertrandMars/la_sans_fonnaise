@@ -216,6 +216,39 @@ nav a:hover { background: rgba(255,255,255,0.2); }
 .produit-tag.v:hover { background: var(--violet); color: white; }
 .produit-tag.o { border-color: var(--orange); color: var(--orange); }
 .produit-tag.o:hover { background: var(--orange); color: white; }
+.producteurs-subhead {
+  font-family: 'Fredoka One', cursive;
+  color: var(--vert);
+  font-size: 1.15rem;
+  text-align: center;
+  margin: 48px 0 20px;
+}
+.producteurs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.producteur-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 3px 14px rgba(92,61,26,0.08);
+  border-left: 4px solid var(--vert);
+}
+.producteur-card.v { border-left-color: var(--violet); }
+.producteur-card.o { border-left-color: var(--orange); }
+.producteur-card h4 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  color: var(--brun);
+  margin: 0 0 5px;
+}
+.producteur-card p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #5a4b38;
+  margin: 0;
+}
 /* ── GONFLABLE SECTION ── */
 .gonflable-wrap {
   display: grid;
@@ -589,7 +622,7 @@ footer .footer-title {
     <div class="popup-body">
       <p>Le repas du terroir est servi le <strong>dimanche 4 octobre</strong> à partir de midi. Places limitées — réservation conseillée.</p>
       <p style="font-size:0.9rem; color:#777; margin-bottom:16px;">Le samedi, pas besoin de réserver : la buvette et la restauration rapide (saucisses, merguez, andouillettes, frites, gaufres...) vous accueillent toute la journée, samedi comme dimanche.</p>
-      <a href="https://www.helloasso.com" target="_blank" id="resa-continue" class="btn-continue">🍽️ Réserver mon repas du dimanche</a>
+      <a href="https://www.onparticipe.fr/b/B0sT3J1D" target="_blank" id="resa-continue" class="btn-continue">🍽️ Réserver mon repas du dimanche</a>
       <div style="background:white; border-radius:14px; padding:16px; margin-bottom:16px; border-left: 4px solid var(--vert);">
         <strong style="font-family:'Fredoka One',cursive;">Tarifs :</strong>
         <div style="margin-top:8px; font-size:0.95rem; line-height:2;">
@@ -639,7 +672,7 @@ footer .footer-title {
       <div class="card">
         <span class="card-icon">🥔</span>
         <h3>Marché de Producteurs</h3>
-        <p>12 exposants locaux — éleveurs, agriculteurs, artisans du goût — vous proposent le meilleur de la région, de la ferme à votre table.</p>
+        <p>10 exposants locaux — éleveurs, agriculteurs, artisans du goût — vous proposent le meilleur de la région, de la ferme à votre table.</p>
       </div>
       <div class="card violet">
         <span class="card-icon">🍽️</span>
@@ -700,20 +733,62 @@ footer .footer-title {
     <div class="section-title-wrap">
       <span class="section-title" style="color:var(--brun)">Les producteurs & exposants</span>
     </div>
-    <p class="section-lead">12 stands de producteurs et artisans de la région, sélectionnés pour la qualité et l'authenticité de leurs produits. Un vrai marché de terroir !</p>
+    <p class="section-lead">10 producteurs et artisans de la région, sélectionnés pour la qualité et l'authenticité de leurs produits. Un vrai marché de terroir !</p>
     <div class="produits-grid reveal">
       <span class="produit-tag o">🥔 Patates & Oignons</span>
       <span class="produit-tag">🥦 Maraîcher</span>
-      <span class="produit-tag v">🧀 Fromage de Chèvre</span>
-      <span class="produit-tag">🧀 Comté & Morbier</span>
-      <span class="produit-tag o">🥚 Œufs Fermiers</span>
-      <span class="produit-tag v">🍷 Vigneron</span>
-      <span class="produit-tag o">🍯 Miel d'Apiculteur</span>
-      <span class="produit-tag">🍞 Boulangerie Artisanale</span>
-      <span class="produit-tag o">🐌 Héliciculteur</span>
-      <span class="produit-tag v">🥃 Distilleur</span>
-      <span class="produit-tag v">🫙 Confitures & Conserves</span>
-      <span class="produit-tag">🐖 Élevage Porcin & Volaille</span>
+      <span class="produit-tag v">🐐 Fromage de Chèvre</span>
+      <span class="produit-tag">🧀 Époisses & Yaourts</span>
+      <span class="produit-tag o">🐷 Porc & Ovin</span>
+      <span class="produit-tag v">🐔 Volaille</span>
+      <span class="produit-tag o">🍯 Miel</span>
+      <span class="produit-tag">🍞 Pains & Viennoiseries</span>
+      <span class="produit-tag o">🐌 Escargots</span>
+      <span class="produit-tag v">🥃 Ratafia & Eau de Vie</span>
+      <span class="produit-tag">🫙 Confitures & Pâtes de Fruits</span>
+      <span class="produit-tag o">🍄 Champignons</span>
+      <span class="produit-tag v">🫒 Huile & Vinaigre</span>
+      <span class="produit-tag">🍹 Jus & Nectars</span>
+      <span class="produit-tag o">🍲 Plats Cuisinés</span>
+    </div>
+    <p class="producteurs-subhead">Quelques exemples de producteurs présents ce week-end</p>
+    <div class="producteurs-list reveal">
+      <div class="producteur-card">
+        <h4>🍞 Boulangerie Com'1 Chou</h4>
+        <p>Pains, viennoiseries, biscuiterie salée</p>
+      </div>
+      <div class="producteur-card v">
+        <h4>🐔 Pouletcompagnie</h4>
+        <p>Volaille, framboises, confitures, pâtes de fruits</p>
+      </div>
+      <div class="producteur-card o">
+        <h4>🐷 La Ferme d'Étaules</h4>
+        <p>Porc et ovin</p>
+      </div>
+      <div class="producteur-card">
+        <h4>🧀 SNC La Ferme des Marronniers</h4>
+        <p>Époisses fermiers, yaourts maison</p>
+      </div>
+      <div class="producteur-card v">
+        <h4>🥃 Distillerie de la Chaumone</h4>
+        <p>Ratafia, eau de vie, jus de fruits</p>
+      </div>
+      <div class="producteur-card o">
+        <h4>🥦 EARL Le Breuil</h4>
+        <p>Maraîcher</p>
+      </div>
+      <div class="producteur-card">
+        <h4>🥔 EARL de la Sans Fonnaise</h4>
+        <p>Pommes de terre et oignons</p>
+      </div>
+      <div class="producteur-card v">
+        <h4>🐐 La Ferme de Vevre</h4>
+        <p>Fromage de chèvre et yaourt</p>
+      </div>
+      <div class="producteur-card o">
+        <h4>🐌 La Ferme au Gré du Temps</h4>
+        <p>Escargots (coquille, farcis, court-bouillon...), confitures, nectars, compotes, huile, vinaigre, champignons, miel, plats cuisinés</p>
+      </div>
     </div>
   </div>
 </section>
@@ -755,24 +830,21 @@ footer .footer-title {
           </div>
           <div class="menu-table-row">
             <div class="menu-table-label">Apéritif</div>
-            <div class="menu-table-cell">
-              Kir ou bière<br>
-              <span class="course-alt">Plateau de charcuterie</span>
-            </div>
-            <div class="menu-table-cell">Boisson soft</div>
+            <div class="menu-table-cell">Assortiment d'amuse-bouches</div>
+            <div class="menu-table-cell">—</div>
           </div>
           <div class="menu-table-row">
             <div class="menu-table-label">Plat</div>
             <div class="menu-table-cell">Tartiflette, salade</div>
             <div class="menu-table-cell">
-              Tartiflette<br>
-              <span class="course-alt">— ou —<br>Saucisse frites<br>— ou —<br>Poulet frites</span>
+              Tartiflette, salade<br>
+              <span class="course-alt">— ou —<br>Poulet frites<br>— ou —<br>Saucisse frites</span>
             </div>
           </div>
           <div class="menu-table-row">
             <div class="menu-table-label">Dessert</div>
-            <div class="menu-table-cell">Gourmandise du jour</div>
-            <div class="menu-table-cell">Gourmandise du jour</div>
+            <div class="menu-table-cell">Tartelette framboise <span class="course-alt">(producteur)</span></div>
+            <div class="menu-table-cell">Tartelette framboise <span class="course-alt">(producteur)</span></div>
           </div>
           <div class="menu-table-row">
             <div class="menu-table-label">Café</div>
@@ -859,8 +931,8 @@ document.addEventListener('keydown', function(e) {
 });
 
 // Réservation : repas unique du dimanche midi
-var HELLOASSO_URL = 'https://www.helloasso.com'; // <-- à remplacer par le lien du formulaire HelloAsso
-document.getElementById('resa-continue').href = HELLOASSO_URL;
+var BILLETTERIE_URL = 'https://www.onparticipe.fr/b/B0sT3J1D';
+document.getElementById('resa-continue').href = BILLETTERIE_URL;
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
